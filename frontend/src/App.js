@@ -210,7 +210,7 @@ function App() {
               transition={{ duration: 1.2, delay: 0.2 }}
             >
               We build money-making
-              <span className="block text-8xl md:text-[12rem] font-black bg-white text-black px-8 py-4 rounded-2xl shadow-[0_0_100px_rgba(59,130,246,0.8)] border-4 border-primary-400 animate-pulse transform hover:scale-105 transition-all duration-300">
+              <span className="block text-7xl md:text-[10rem] font-black bg-gradient-to-r from-primary-300 via-white to-emerald-300 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] filter brightness-125 transform hover:scale-105 transition-all duration-500 leading-none">
                 software. Fast.
               </span>
             </motion.h1>
