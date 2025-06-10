@@ -248,6 +248,14 @@ function App() {
                 Join Our Waitlist
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
+              
+              <button
+                onClick={() => document.getElementById('enquiries').scrollIntoView({ behavior: 'smooth' })}
+                className="group bg-gradient-to-r from-emerald-600 to-emerald-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-emerald-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+              >
+                Get Custom Software
+                <Rocket className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           </motion.div>
         </div>
