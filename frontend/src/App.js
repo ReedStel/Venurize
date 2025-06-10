@@ -383,7 +383,7 @@ function App() {
             <h3 className="text-3xl font-bold text-white mb-2">Reed Stelfox</h3>
             <p className="text-xl text-primary-400 mb-6 font-semibold">Founder & Director</p>
             <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              "Built ColdPlug. Scaled VaultLaunch. Now leading Venurize to $100K/mo and beyond."
+              "Building VaultLaunch. Leading Venurize into the future of AI-powered software."
             </p>
           </motion.div>
         </div>
