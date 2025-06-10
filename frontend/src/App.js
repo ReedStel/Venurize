@@ -222,6 +222,9 @@ function App() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               Venurize is a future-focused startup studio creating AI-powered tools for creators, founders, and agencies.
+              <span className="block mt-4 text-emerald-400 font-semibold">
+                We can build anything for anyone. Your vision, our execution.
+              </span>
             </motion.p>
             
             <motion.div 
