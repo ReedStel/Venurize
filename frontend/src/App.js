@@ -362,38 +362,19 @@ function App() {
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-emerald-500 mx-auto"></div>
           </motion.div>
           
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex-shrink-0"
-            >
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1610631066894-62452ccb927c" 
-                  alt="Reed Stelfox – Founder & Director of Venurize"
-                  className="w-64 h-64 object-cover rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/20 to-emerald-500/20 rounded-2xl"></div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex-1"
-            >
-              <h3 className="text-3xl font-bold text-white mb-2">Reed Stelfox</h3>
-              <p className="text-xl text-primary-400 mb-6 font-semibold">Founder & Director</p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                "Built ColdPlug. Scaled VaultLaunch. Now leading Venurize to $100K/mo and beyond."
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h3 className="text-3xl font-bold text-white mb-2">Reed Stelfox</h3>
+            <p className="text-xl text-primary-400 mb-6 font-semibold">Founder & Director</p>
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              "Built ColdPlug. Scaled VaultLaunch. Now leading Venurize to $100K/mo and beyond."
+            </p>
+          </motion.div>
         </div>
       </section>
 
