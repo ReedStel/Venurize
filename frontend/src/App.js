@@ -210,7 +210,7 @@ function App() {
               transition={{ duration: 1.2, delay: 0.2 }}
             >
               We build money-making
-              <span className="block bg-gradient-to-r from-primary-400 to-emerald-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-primary-400 to-emerald-400 bg-clip-text text-transparent text-7xl md:text-9xl drop-shadow-2xl animate-glow">
                 software. Fast.
               </span>
             </motion.h1>
