@@ -262,7 +262,7 @@ function App() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">About Venurize</h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Venurize is led by <span className="text-primary-400 font-semibold">Reed Stelfox</span> – a software engineering student, founder, and former machinery entrepreneur. We launch fast, validate with revenue, and build software designed to print money.
+              Venurize is led by <span className="text-primary-400 font-semibold">Reed Stelfox</span> – a software engineering student, founder, and serial entrepreneur. We launch fast, validate with revenue, and build software designed to print money.
             </p>
           </motion.div>
         </div>
