@@ -409,6 +409,116 @@ function App() {
         </div>
       </section>
 
+      {/* Custom Software Enquiries */}
+      <section id="enquiries" className="py-24 px-6 bg-gradient-to-r from-emerald-900/20 to-primary-900/20">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Need Custom Software?</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              We build anything for anyone. From AI-powered SaaS to complex enterprise solutions.
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-primary-500 mx-auto"></div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-charcoal-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">What We Build</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-3"></div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">AI-Powered SaaS</h4>
+                      <p className="text-gray-400">Custom AI tools and automation platforms</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-3"></div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">E-commerce Solutions</h4>
+                      <p className="text-gray-400">High-converting online stores and marketplaces</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-3"></div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Enterprise Software</h4>
+                      <p className="text-gray-400">Custom business applications and integrations</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-3"></div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">Mobile Apps</h4>
+                      <p className="text-gray-400">iOS and Android applications that scale</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Start Your Project</h3>
+                <form className="space-y-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Project Budget (Optional)"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <textarea
+                      placeholder="Tell us about your project idea..."
+                      rows="4"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-400 transition-colors resize-none"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-white py-3 rounded-lg font-semibold hover:from-emerald-700 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105 flex items-center justify-center"
+                  >
+                    <Rocket className="w-5 h-5 mr-2" />
+                    Get Project Quote
+                  </button>
+                </form>
+                <p className="text-sm text-gray-400 mt-4 text-center">
+                  We'll respond within 24 hours with a detailed proposal.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-24 px-6 bg-gradient-to-r from-primary-900/40 to-emerald-900/40">
         <div className="max-w-4xl mx-auto text-center">
