@@ -210,7 +210,7 @@ function App() {
               transition={{ duration: 1.2, delay: 0.2 }}
             >
               We build money-making
-              <span className="block text-7xl md:text-[10rem] font-black bg-gradient-to-r from-primary-300 via-white to-emerald-300 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] filter brightness-125 transform hover:scale-105 transition-all duration-500 leading-none">
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent mt-4 leading-tight tracking-tight">
                 software. Fast.
               </span>
             </motion.h1>
