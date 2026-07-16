@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
 <title>Venurize | Software Studio, Bendigo</title>
 <meta name="description" content="Venurize is an independent software studio in Bendigo, Victoria. Websites, custom web applications and automation for businesses that need things to actually work.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Cpath d='M7 7 L16 26 L25 7' stroke='%23EDEDED' stroke-width='3' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
@@ -23,7 +24,7 @@
     --ease:cubic-bezier(.22,1,.36,1);
   }
   *{margin:0;padding:0;box-sizing:border-box;border-radius:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
     background:var(--bg);
     color:var(--text);
@@ -74,12 +75,20 @@
   }
   .nav-meta .dot{width:6px;height:6px;background:var(--live);display:inline-block;animation:pulse 2.2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
-  @media(max-width:900px){.nav-links{display:none}}
-  @media(max-width:560px){.nav-meta{display:none}}
+  @media(max-width:900px){
+    .nav-links a{display:none}
+    .nav-links a.nav-contact{display:block;border:1px solid var(--line)}
+  }
+  @media(max-width:560px){
+    .nav-meta{display:none}
+    .hero-tag{font-size:9.5px;letter-spacing:.13em}
+  }
 
   /* ---------------- hero ---------------- */
   header{
-    min-height:100svh;position:relative;
+    min-height:100vh;
+    min-height:100svh;position:relative;overflow:hidden;
+    padding-top:88px;
     display:flex;flex-direction:column;justify-content:flex-end;
     border-bottom:1px solid var(--line);
     background-image:
@@ -114,8 +123,11 @@
     opacity:0;transition:opacity 1.2s ease;pointer-events:none;z-index:0;
   }
   .sec-vid.on{opacity:.3}
-  #standards{overflow:hidden}
-  #standards .wrap{position:relative;z-index:1}
+  #standards,#contact{overflow:hidden}
+  #standards .wrap,#contact .wrap{position:relative;z-index:1}
+  .prod-right{overflow:hidden}
+  .prod-right .mock{position:relative;z-index:1}
+  .prod-right .viz-vid.on{opacity:.3}
   .s-val b,.t-v b{font-weight:inherit}
   .mock-act .act-row{animation:rowIn .5s var(--ease)}
   @keyframes rowIn{from{opacity:0;transform:translateY(-5px)}}
@@ -960,7 +972,7 @@
       <a href="#standards">Standards</a>
       <a href="#studio">Studio</a>
       <a href="#process">Process</a>
-      <a href="mailto:hello@venurize.com">Contact</a>
+      <a class="nav-contact" href="mailto:hello@venurize.com">Contact</a>
     </div>
     <div class="nav-meta">
       <span class="dot" aria-hidden="true"></span>
@@ -1092,6 +1104,9 @@
         </div>
       </div>
       <div class="prod-right">
+        <video class="viz-vid bg-vid" muted loop playsinline preload="none" aria-hidden="true">
+          <source src="particles.mp4" type="video/mp4">
+        </video>
         <div class="mock" role="img" aria-label="Preview of the RetainFlow dashboard showing member stats and recent activity">
           <div class="mock-head">
             <span class="mock-brand"><i aria-hidden="true"></i>RetainFlow</span>
@@ -1535,6 +1550,9 @@
 </section>
 
 <section id="contact" class="sec-pad">
+  <video class="sec-vid bg-vid" muted loop playsinline preload="none" aria-hidden="true">
+    <source src="terrain.mp4" type="video/mp4">
+  </video>
   <div class="wrap">
     <div class="contact-label mono reveal">08 / Contact. Brief us on the project</div>
     <a class="mail-link reveal d1" href="mailto:hello@venurize.com">hello@venurize.com</a>
