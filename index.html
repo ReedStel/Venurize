@@ -92,6 +92,14 @@
     background:radial-gradient(ellipse 90% 70% at 50% 100%,transparent 30%,rgba(8,8,8,.85) 100%);
   }
   #terrain{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.6;pointer-events:none}
+  .hero-vid{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;z-index:0;pointer-events:none;
+    transform:scale(1.16);transform-origin:center;
+    filter:brightness(.65);
+    opacity:0;transition:opacity 1.4s ease;
+  }
+  .hero-vid.on{opacity:1}
   .s-val b,.t-v b{font-weight:inherit}
   .mock-act .act-row{animation:rowIn .5s var(--ease)}
   @keyframes rowIn{from{opacity:0;transform:translateY(-5px)}}
@@ -947,6 +955,9 @@
 
 <header id="top">
   <canvas id="terrain" aria-hidden="true"></canvas>
+  <video id="heroVid" class="hero-vid" muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="terrain.mp4" type="video/mp4">
+  </video>
   <span class="crosshair" style="top:18%;left:8%" aria-hidden="true">+</span>
   <span class="crosshair" style="top:26%;right:12%" aria-hidden="true">+</span>
   <span class="crosshair" style="top:58%;left:46%" aria-hidden="true">+</span>
@@ -1585,6 +1596,18 @@
       if (!reduced) requestAnimationFrame(frame);
     }
     frame();
+  })();
+
+  // hero background video (canvas terrain stays as fallback)
+  (function(){
+    var v = document.getElementById('heroVid');
+    if (!v) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){ v.remove(); return; }
+    v.muted = true;
+    var show = function(){ v.classList.add('on'); };
+    v.addEventListener('playing', show);
+    var p = v.play();
+    if (p && p.catch) p.catch(function(){ /* autoplay blocked: canvas fallback remains */ });
   })();
 
   // live telemetry across dashboard mockups
