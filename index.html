@@ -100,6 +100,22 @@
     opacity:0;transition:opacity 1.4s ease;
   }
   .hero-vid.on{opacity:1}
+  .viz-vid{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;transform:scale(1.16);filter:brightness(.5);
+    opacity:0;transition:opacity 1.2s ease;pointer-events:none;
+  }
+  .viz-vid.on{opacity:.45}
+  .fp-viz{overflow:hidden}
+  .fp-viz .panel{position:relative;z-index:1}
+  .sec-vid{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;transform:scale(1.16);filter:brightness(.45);
+    opacity:0;transition:opacity 1.2s ease;pointer-events:none;z-index:0;
+  }
+  .sec-vid.on{opacity:.3}
+  #standards{overflow:hidden}
+  #standards .wrap{position:relative;z-index:1}
   .s-val b,.t-v b{font-weight:inherit}
   .mock-act .act-row{animation:rowIn .5s var(--ease)}
   @keyframes rowIn{from{opacity:0;transform:translateY(-5px)}}
@@ -1254,6 +1270,9 @@
           </div>
         </div>
         <div class="fp-viz">
+          <video class="viz-vid bg-vid" muted loop playsinline preload="none" aria-hidden="true">
+            <source src="circuit.mp4" type="video/mp4">
+          </video>
           <div class="panel" role="img" aria-label="Vira OS greenhouse dashboard mockup showing temperature, humidity, air quality, soil moisture, camera feed and sensor health">
             <div class="panel-head">
               <span>Vira OS / Greenhouse 01</span>
@@ -1386,6 +1405,9 @@
 </section>
 
 <section id="standards" class="sec-pad">
+  <video class="sec-vid bg-vid" muted loop playsinline preload="none" aria-hidden="true">
+    <source src="particles.mp4" type="video/mp4">
+  </video>
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="sec-label mono">05 / Engineering standards</div>
@@ -1608,6 +1630,27 @@
     v.addEventListener('playing', show);
     var p = v.play();
     if (p && p.catch) p.catch(function(){ /* autoplay blocked: canvas fallback remains */ });
+  })();
+
+  // lazy background videos: play only while on screen
+  (function(){
+    var vids = document.querySelectorAll('.bg-vid');
+    if (!vids.length) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      vids.forEach(function(v){ v.remove(); });
+      return;
+    }
+    var vio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting){ v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else { v.pause(); }
+      });
+    }, {rootMargin:'240px 0px'});
+    vids.forEach(function(v){
+      v.addEventListener('playing', function(){ v.classList.add('on'); });
+      vio.observe(v);
+    });
   })();
 
   // live telemetry across dashboard mockups
